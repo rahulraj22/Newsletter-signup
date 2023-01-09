@@ -5,7 +5,7 @@ const request = require("request");
 const app = express();
 
 // In order to serve the statis files/images from our server to browser, then we use special function of express i.e :-
-app.use(express.static("public"));
+app.use(express.static(__dirname + "public"));
 
 app.use(bodyParser.urlencoded({extended: true}));
 
