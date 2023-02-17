@@ -39,7 +39,7 @@ app.post("/", function(req, res){
         url : 'https://us21.api.mailchimp.com/3.0/lists/77defe0514',
         method: 'POST',
         headers: {
-            "Authorization": "rahulraj22 c66fad33ae5f06eef8faafb28f9a0332-us21"
+            "Authorization": "rahulraj22 f00875bb9027f44534565621861bb685-us21"
         },
         body: jasonData
     };
@@ -79,5 +79,5 @@ app.listen(process.env.PORT || 3000, function(){
 
 // putting porcess.env.PORT || 3000 => this will allow our app to listen to port in both local(3000) and heroku(process.env.PORT) 
 
-// mailchimp api key : c66fad33ae5f06eef8faafb28f9a0332-us21
+// mailchimp api key : f00875bb9027f44534565621861bb685-us21
 // list id : 77defe0514
