@@ -4,8 +4,8 @@ const request = require("request");
 
 const app = express();
 
-// In order to serve the statis files/images from our server to browser, then we use special function of express i.e :-
-app.use(express.static(__dirname + "/public/"));
+// In order to serve the static files/images from our server to browser, then we use special function of express i.e :-
+app.use(express.static(__dirname + "/public/"));  // for I just replaced "public" to __dirname + "/public/"
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -32,14 +32,14 @@ app.post("/", function(req, res){
         ]
     };
     
-    // convert js objec to flatpack json:-
+    // convert js object to flatpack json:-
     var jasonData = JSON.stringify(data);
     
     var options = {
         url : 'https://us21.api.mailchimp.com/3.0/lists/77defe0514',
         method: 'POST',
         headers: {
-            "Authorization": "rahulraj22 c66fad33ae5f06eef8faafb28f9a0332-us21"
+            "Authorization": "rahulraj22 c66fad33ae5f06eef8faafb28f9a0332-us2"
         },
         body: jasonData
     };
@@ -74,7 +74,8 @@ app.post("/failure", function(req, res){
 
 // we have to remove the local port i.e 3000 when deploying this app in heroku. So, replace 3000 with process.env.PORT
 app.listen(process.env.PORT || 3000, function(){ 
-    console.log("Server is running on port 3000");
+    // console.log("Server is running on port 3000");
+    console.log("Server is running on port " + process.env.PORT);
 });
 
 // putting porcess.env.PORT || 3000 => this will allow our app to listen to port in both local(3000) and heroku(process.env.PORT) 
