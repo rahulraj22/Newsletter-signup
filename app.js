@@ -69,7 +69,7 @@ app.post("/", function(req, res){
 
 // after post request for home("/") route & now we want another request of failure route
 app.post("/failure", function(req, res){
-    res.redirect("/");
+    res.redirect("/"); // this will redirect us to home route(on button click)  
 });
 
 // we have to remove the local port i.e 3000 when deploying this app in heroku. So, replace 3000 with process.env.PORT
@@ -80,5 +80,5 @@ app.listen(process.env.PORT || 3000, function(){
 
 // putting porcess.env.PORT || 3000 => this will allow our app to listen to port in both local(3000) and heroku(process.env.PORT) 
 
-// mailchimp api key : f00875bb9027f44534565621861bb685-us21 (our new api key)
+// mailchimp api key : f00875bb9027f44534565621861bb685-us21 (our current new api key)
 // list id : 77defe0514
