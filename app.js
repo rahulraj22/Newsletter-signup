@@ -34,12 +34,11 @@ app.post("/", function(req, res){
     
     // convert js object to flatpack json:-
     var jasonData = JSON.stringify(data);
-    let MKEY = ${{ secrets.MAILCHIMP_API_KEY }};
     var options = {
         url : 'https://us21.api.mailchimp.com/3.0/lists/77defe0514',
         method: 'POST',
         headers: {
-            "Authorization": "rahulraj22 "+MKEY
+            "Authorization": "rahulraj22 YOUR_MAILCHIMP_API_KEY"
         },
         body: jasonData
     };
@@ -80,5 +79,5 @@ app.listen(process.env.PORT || 3000, function(){
 
 // putting porcess.env.PORT || 3000 => this will allow our app to listen to port in both local(3000) and heroku(process.env.PORT) 
 
-// mailchimp api key : f00875bb9027f44534565621861bb685-us21 (our current new api key)
+// mailchimp api key : YOUR_MAILCHIMP_API_KEY (our current new api key)
 // list id : 77defe0514
