@@ -34,12 +34,12 @@ app.post("/", function(req, res){
     
     // convert js object to flatpack json:-
     var jasonData = JSON.stringify(data);
-    // let MKEY = ${{ secrets.MAILCHIMP_API_KEY }};
+    let MKEY = ${{ secrets.MAILCHIMP_API_KEY }};
     var options = {
         url : 'https://us21.api.mailchimp.com/3.0/lists/77defe0514',
         method: 'POST',
         headers: {
-            "Authorization": "rahulraj22 ${{ secrets.MAILCHIMP_API_KEY }}"
+            "Authorization": "rahulraj22 "+MKEY
         },
         body: jasonData
     };
